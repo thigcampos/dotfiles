@@ -1,0 +1,76 @@
+# Global Git configuration (Main)
+
+[user]
+  name = "Thiago Campos"
+  email = commit@thigcampos.com 
+
+# Git Aliases for shortcuts
+[alias]
+  co = checkout
+  br = branch
+  cm = commit
+  sw = switch
+  st = status
+  lg = log --oneline --graph --decorate --all
+  amend = commit --amend --no-edit
+  unstage = reset HEAD --
+  undo = reset --hard HEAD
+
+# Auto-merge settings (default to merge instead of rebase)
+[merge]
+  tool = vimdiff
+[diff]
+  tool = vimdiff
+
+# Pull Configuration (merge instead of rebase by default)
+[pull]
+  rebase = false  # Merge instead of rebase
+
+# Color and UI enhancements
+[color]
+  ui = auto
+[color "status"]
+  added = green
+  changed = yellow
+  untracked = red
+[color "branch"]
+  current = green
+  remote = yellow
+  local = cyan
+[credential]
+  helper = osxkeychain  # Use macOS Keychain for credential storage
+
+# Set default editor to nvim (Neovim)
+[core]
+  editor = nvim
+  # Configure global .gitignore for macOS (e.g., .DS_Store, .vscode)
+  excludesFile = ~/.gitignore_global
+  # SSH setup (pointing to your personal SSH key)
+  sshCommand = ssh -i ~/.ssh/thigcampos
+
+# Push configuration (default to simple mode for safer pushes)
+[push]
+  default = simple
+
+# Git History settings
+[log]
+  date = iso
+  abbrevCommit = true
+
+# Automatically prune remote branches when fetching
+[fetch]
+  prune = true
+
+# GPG Commit Signing
+[commit]
+  gpgSign = true  # Sign all commits with GPG
+
+# GPG key (replace with your actual GPG key ID)
+[gpg]
+  program = gpg
+[signing]
+  key = 0A3E956CC4D6ADB0 
+
+# Configuration for includes (work-specific setup)
+[includeIf "gitdir:~/Repositories/nan-systems/"]
+  path = ~/.gitconfig-work  # Work-specific configuration (ssh, email, etc.)

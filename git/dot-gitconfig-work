@@ -1,0 +1,25 @@
+# Work Git configuration (included for work-related repos)
+
+[user]
+  name = "Thiago Campos" 
+  email = thiago.campos@nan.systems
+
+# SSH setup for work (pointing to the work SSH key)
+[core]
+  sshCommand = ssh -i ~/.ssh/nan-systems
+
+# Overriding the pull behavior for work (merge instead of rebase)
+[pull]
+  rebase = false  # Ensure merge behavior instead of rebase
+
+# GPG Commit Signing
+[commit]
+  gpgSign = false  # Sign all commits with GPG
+
+# Additional aliases or work-specific settings
+[alias]
+
+# Work-specific Git history configurations
+[log]
+  date = short
+

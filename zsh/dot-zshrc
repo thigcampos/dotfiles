@@ -1,0 +1,60 @@
+# Enable vi mode for command line editing
+bindkey -v
+
+# Enable autocomplete
+autoload -U compinit
+compinit
+
+# Set up the prompt to show current directory in bold blue and git branch in bold purple
+autoload -U colors && colors
+
+# Prompt function with bold text
+PROMPT='%{$fg_bold[blue]%}$(basename $(pwd))%{$reset_color%} $(git_prompt_info)'
+
+# Git branch display function with bold purple
+git_prompt_info() {
+  # Check if we're inside a git repository
+  git rev-parse --is-inside-work-tree &>/dev/null || return
+  # Show the branch name in bold purple
+  echo "%{$fg_bold[magenta]%}$(git rev-parse --abbrev-ref HEAD)%{$reset_color%} "
+}
+
+# Enable syntax highlighting (useful for dev)
+# Adjust the path based on your installation
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh  # For M1 Macs
+#source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh  # For Intel Macs
+
+# Enable auto-suggestions (useful for dev)
+# Adjust the path based on your installation
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh  # For M1 Macs
+#source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh  # For Intel Macs
+
+# Use `~/.zsh_history` file for command history
+HISTFILE=~/.zsh_history
+
+# Enable timestamped history
+HISTTIMEFORMAT='%F %T '
+
+# Set history size and options
+HISTSIZE=10000
+SAVEHIST=10000
+setopt append_history
+setopt share_history
+
+# Set default editor to nvim
+export EDITOR=nvim
+
+# Enable auto-completion of commands
+setopt AUTO_LIST
+setopt MENU_COMPLETE
+
+# Allow command line substitution (expand ~ and variables in the prompt)
+setopt prompt_subst
+
+# Enable colorized output for `ls` and other commands
+alias ls='ls --color=auto'
+alias ll='ls -la'
+alias l='ls -l'
+
+# Path for development tools
+export PATH="$HOME/.local/bin:$PATH"
