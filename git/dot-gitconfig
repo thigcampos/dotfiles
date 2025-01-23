@@ -51,7 +51,7 @@
 # Push configuration (default to simple mode for safer pushes)
 [push]
   default = simple
-
+  autoSetupRemote = true
 # Git History settings
 [log]
   date = iso
