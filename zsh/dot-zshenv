@@ -2,4 +2,4 @@
 . "$HOME/.cargo/env"
 
 # Path to synced notes
-export NOTES_PATH="/Users/thiagocampos/Library/Mobile Documents/com~apple~CloudDocs/Anotacoes"
+export NOTES_PATH="/Users/thiagocampos/Library/Mobile Documents/iCloud~md~obsidian/Documents/Caderno"
