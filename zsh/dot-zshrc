@@ -11,23 +11,20 @@ autoload -U colors && colors
 # Prompt function with bold text
 PROMPT='%{$fg_bold[blue]%}$(basename $(pwd))%{$reset_color%} $(git_prompt_info)'
 
-# Git branch display function with bold purple
+# Git branch display function with error handling
 git_prompt_info() {
-  # Check if we're inside a git repository
-  git rev-parse --is-inside-work-tree &>/dev/null || return
-  # Show the branch name in bold purple
-  echo "%{$fg_bold[magenta]%}$(git rev-parse --abbrev-ref HEAD)%{$reset_color%} "
+  git rev-parse --is-inside-work-tree >/dev/null 2>&1 || return
+  git rev-parse --verify HEAD >/dev/null 2>&1 || return
+  local branch
+  branch=$(git symbolic-ref --short HEAD 2>/dev/null || git describe --tags --always 2>/dev/null)
+  echo "%{$fg_bold[magenta]%}${branch}%{$reset_color%} "
 }
 
-# Enable syntax highlighting (useful for dev)
-# Adjust the path based on your installation
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh  # For M1 Macs
-#source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh  # For Intel Macs
+# Enable syntax highlighting
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# Enable auto-suggestions (useful for dev)
-# Adjust the path based on your installation
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh  # For M1 Macs
-#source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh  # For Intel Macs
+# Enable auto-suggestions
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Use `~/.zsh_history` file for command history
 HISTFILE=~/.zsh_history
