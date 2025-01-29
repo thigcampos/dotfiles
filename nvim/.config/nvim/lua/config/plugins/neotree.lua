@@ -12,14 +12,14 @@ return {
 			{
 				"<leader>fa",
 				function()
-					require("neo-tree.command").execute({ toggle = false, dir = vim.fn.expand("%:p:h") })
+					require("neo-tree.command").execute({ toggle = false, dir = vim.uv.cwd() })
 				end,
 				desc = "Explorer NeoTree (cwd) without toggle",
 			},
 			{
 				"<leader>fe",
 				function()
-					require("neo-tree.command").execute({ toggle = true, dir = vim.fn.expand("%:p:h") })
+					require("neo-tree.command").execute({ toggle = true, dir = vim.uv.cwd() })
 				end,
 				desc = "Explorer NeoTree (cwd)",
 			},
