@@ -19,7 +19,7 @@
 # (windows: C:\Users\USER\AppData\Local\rio\themes\dracula.toml)
 #
 # Example:
-theme = "apple-colors"
+# theme = ""
 
 # Padding-x
 #
@@ -359,3 +359,6 @@ mode = "NativeTab"
 # log-level = "OFF"
 # enable-log-file = false
 
+[adaptive-theme]
+light = "iterm-light"
+dark = "apple-dark"
