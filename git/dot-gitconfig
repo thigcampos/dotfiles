@@ -63,4 +63,10 @@
   program = gpg
 
 [signing]
-  key = 0A3E956CC4D6ADB0 
+    key = 0A3E956CC4D6ADB0 
+
+[diff "docx"]
+[includeIf "gitdir:~/Repositories/nan-systems/"]
+  path = ~/.gitconfig-work
+
+

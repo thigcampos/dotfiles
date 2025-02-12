@@ -6,3 +6,7 @@
 
 [commit]
   gpgSign = false
+
+[diff "docx"]
+    textconv = pandoc --from=docx --to=markdown
+    prompt = false
