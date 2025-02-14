@@ -360,5 +360,5 @@ mode = "NativeTab"
 # enable-log-file = false
 
 [adaptive-theme]
-light = "iterm-light"
-dark = "apple-dark"
+light = "cupertino-light"
+dark = "cupertino-dark"
