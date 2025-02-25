@@ -18,6 +18,10 @@
 
 [diff]
   tool = vimdiff
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
 
 [pull]
   rebase = false 
@@ -45,14 +49,17 @@
 
 [push]
   default = simple
-  autoSetupRemote = true
+	autoSetupRemote = true
+	followTags = true
 
 [log]
   date = iso
   abbrevCommit = true
 
 [fetch]
-  prune = true
+	prune = true
+	pruneTags = true
+	all = true
 
 [commit]
   gpgSign = true 
@@ -70,3 +77,11 @@
   path = ~/.gitconfig-work
 
 
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[tag]
+	sort = version:refname
+[init]
+	defaultBranch = main
