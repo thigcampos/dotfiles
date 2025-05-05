@@ -70,12 +70,11 @@
   program = gpg
 
 [signing]
-    key = 0A3E956CC4D6ADB0 
+    key = A0693C3E5EE14C06
 
 [diff "docx"]
-[includeIf "gitdir:~/Repositories/nan-systems/"]
-  path = ~/.gitconfig-work
-
+    textconv = pandoc --from=docx --to=markdown
+    prompt = false
 
 [column]
 	ui = auto

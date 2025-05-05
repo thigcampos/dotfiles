@@ -260,9 +260,9 @@ size = 13
 # Example:
 [navigation]
 mode = "NativeTab"
+use-current-path = true
 # clickable = false
 # hide-if-single = true
-# use-current-path = false
 # color-automation = []
 
 # Shell

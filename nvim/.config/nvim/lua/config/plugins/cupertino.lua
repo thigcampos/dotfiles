@@ -1,10 +1,10 @@
 return {
 	{
-		"thigcampos/apple-colors.nvim",
+		"thigcampos/cupertino.nvim",
 		lazy = false,
 		priority = 1000,
 		config = function()
-			vim.cmd([[colorscheme apple-colors]])
+			vim.cmd([[colorscheme cupertino]])
 		end,
 	},
 }

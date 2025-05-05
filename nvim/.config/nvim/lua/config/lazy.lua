@@ -35,6 +35,3 @@ require("mason-lspconfig").setup()
 
 -- Setup harpoon
 require("harpoon"):setup({})
-
--- Setup markdown
-require("render-markdown").enable()
