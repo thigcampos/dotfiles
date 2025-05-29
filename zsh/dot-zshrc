@@ -53,24 +53,5 @@ alias ls='ls --color=auto'
 alias ll='ls -la'
 alias l='ls -l'
 
-# Enable shortcuts for synced notes
-alias notas='nvim $NOTES_PATH'
-
-diario() {
-  current_date=$(date +"%Y-%m-%d")
-  target_directory="$NOTES_PATH/Registros/$current_date.md"
-  nvim "$target_directory"
-}
-
-# Path for development tools
-export PATH="$HOME/.local/bin:$PATH"
-
-# bun completions
+# Bun completions
 [ -s "/Users/thiagocampos/.bun/_bun" ] && source "/Users/thiagocampos/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-# asdf
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"

@@ -1,5 +1,9 @@
+# Bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
 # Rust cargo
 . "$HOME/.cargo/env"
 
-# Path to synced notes
-export NOTES_PATH="/Users/thiagocampos/Library/Mobile Documents/iCloud~md~obsidian/Documents/Caderno"
+# Path for development tools
+export PATH="$HOME/.local/bin:$PATH"
