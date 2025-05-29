@@ -1,86 +1,87 @@
 [user]
-  name = "Thiago Campos"
-  email = commit@thigcampos.com 
+    name = "Thiago Campos"
+    email = commit@thigcampos.com 
 [includeIf "gitdir:~/Repositories/nan-systems/"]
-  path = ~/.gitconfig-work
+    path = ~/.gitconfig-work
 
 [alias]
-  co = checkout
-  br = branch
-  cm = commit
-  sw = switch
-  st = status
-  re = restore
-  amend = commit --amend --no-edit
+    co = checkout
+    br = branch
+    cm = commit
+    sw = switch
+    st = status
+    re = restore
+    amend = commit --amend --no-edit
 
 [merge]
-  tool = vimdiff
+    tool = vimdiff
 
 [diff]
-  tool = vimdiff
-	algorithm = histogram
-	colorMoved = plain
-	mnemonicPrefix = true
-	renames = true
+    tool = vimdiff
+    algorithm = histogram
+    colorMoved = plain
+    mnemonicPrefix = true
+    renames = true
 
 [pull]
-  rebase = false 
+    rebase = false 
 
 [color]
-  ui = auto
+    ui = auto
+
 [color "status"]
-  added = green
-  changed = yellow
-  untracked = red
+    added = green
+    changed = yellow
+    untracked = red
+
 [color "branch"]
-  current = green
-  remote = yellow
-  local = cyan
+    current = green
+    remote = yellow
+    local = cyan
 
 [credential]
-  helper = osxkeychain
+    helper = osxkeychain
 
 [core]
-  editor = nvim
-  excludesFile = ~/.gitignore_global
-  sshCommand = ssh -i ~/.ssh/thigcampos
+    editor = nvim
+    excludesFile = ~/.gitignore_global
+    sshCommand = ssh -i ~/.ssh/thigcampos
 [includeIf "gitdir:~/Repositories/nan-systems/"]
-  path = ~/.gitconfig-work
+    path = ~/.gitconfig-work
 
 [push]
-  default = simple
-	autoSetupRemote = true
-	followTags = true
+    default = simple
+    autoSetupRemote = true
+    followTags = true
 
 [log]
-  date = iso
-  abbrevCommit = true
+    date = iso
+    abbrevCommit = true
 
 [fetch]
-	prune = true
-	pruneTags = true
-	all = true
+    prune = true
+    pruneTags = true
+    all = true
 
 [commit]
-  gpgSign = true 
+    gpgSign = true 
 [includeIf "gitdir:~/Repositories/nan-systems/"]
-  path = ~/.gitconfig-work
+    path = ~/.gitconfig-work
 
 [gpg]
-  program = gpg
+    program = gpg
 
 [signing]
-    key = A0693C3E5EE14C06
-
-[diff "docx"]
-    textconv = pandoc --from=docx --to=markdown
-    prompt = false
+    key = 6F7D11D6B76DDC5D
 
 [column]
-	ui = auto
+    ui = auto
+
 [branch]
-	sort = -committerdate
+    sort = -committerdate
+
 [tag]
-	sort = version:refname
+    sort = version:refname
+
 [init]
-	defaultBranch = main
+    defaultBranch = main

@@ -1,8 +1,8 @@
 [user]
-  email = thiago.campos@nan.systems
+    email = thiago.campos@nan.systems
 
 [core]
-  sshCommand = ssh -i ~/.ssh/nan-systems
+    sshCommand = ssh -i ~/.ssh/nan-systems
 
 [commit]
-  gpgSign = false
+    gpgSign = false
