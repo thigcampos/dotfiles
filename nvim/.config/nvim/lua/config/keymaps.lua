@@ -21,7 +21,7 @@ end)
 -- Telescope
 local telescope_builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", telescope_builtin.find_files)
-vim.keymap.set("n", "<leader>fg", telescope_builtin.live_grep)
+vim.keymap.set("n", "<leader>lg", telescope_builtin.live_grep)
 
 -- Harpoon
 local harpoon = require("harpoon")
@@ -44,10 +44,12 @@ local function toggle_telescope(harpoon_files)
 		:find()
 end
 
-vim.keymap.set("n", "<C-e>", function()
+vim.keymap.set("n", "<leader>ft", function()
 	toggle_telescope(harpoon:list())
 end, { desc = "Open harpoon window" })
-
+vim.keymap.set("n", "<leader>fh", function()
+	harpoon.ui:toggle_quick_menu(harpoon:list())
+end)
 vim.keymap.set("n", "<leader>a", function()
 	harpoon:list():add()
 end)
@@ -65,9 +67,9 @@ vim.keymap.set("n", "<C-x>", function()
 end)
 
 -- Toggle previous & next buffers stored within Harpoon list
-vim.keymap.set("n", "<C-S>", function()
+vim.keymap.set("n", "<C-S-P>", function()
 	harpoon:list():prev()
 end)
-vim.keymap.set("n", "<C-W", function()
+vim.keymap.set("n", "<C-S-N>", function()
 	harpoon:list():next()
 end)
