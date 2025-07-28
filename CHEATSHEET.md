@@ -20,6 +20,7 @@ vim.keymap.set("n", "<leader>fg", telescope_builtin.live_grep)
 ### Harpoon  
 ```lua
 vim.keymap.set("n", "<C-e>", toggle_telescope(harpoon:list())
+vim.keymap.set("n", "<C-d>", harpoon:list():remove())
 vim.keymap.set("n", "<leader>a", harpoon:list():add())
 vim.keymap.set("n", "<C-a>", harpoon:list():select(1))
 vim.keymap.set("n", "<C-s>", harpoon:list():select(2))
