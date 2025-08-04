@@ -6,7 +6,7 @@ return {
 				formatters_by_ft = {
 					lua = { "stylua" },
 					rust = { "rustfmt" },
-					python = { "ruff_format", "ruff_fix" },
+					python = { "ruff_fix" },
 				},
 				format_on_save = {
 					timeout_ms = 500,

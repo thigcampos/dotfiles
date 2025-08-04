@@ -1,4 +1,4 @@
--- Mapleader and maplocalleader
+-- Leader and Local Leader
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
@@ -10,13 +10,18 @@ vim.api.nvim_create_autocmd("TermOpen", {
 		vim.opt.relativenumber = false
 	end,
 })
-
 vim.keymap.set("n", "<leader>cl", function()
 	vim.cmd.vnew()
 	vim.cmd.term()
 	vim.cmd.wincmd("J")
 	vim.api.nvim_win_set_height(0, 5)
 end)
+
+-- Netrw
+vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
+
+-- LSP
+vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
 -- Telescope
 local telescope_builtin = require("telescope.builtin")
@@ -44,10 +49,10 @@ local function toggle_telescope(harpoon_files)
 		:find()
 end
 
-vim.keymap.set("n", "<leader>ft", function()
+vim.keymap.set("n", "<leader>lf", function()
 	toggle_telescope(harpoon:list())
-end, { desc = "Open harpoon window" })
-vim.keymap.set("n", "<leader>fh", function()
+end)
+vim.keymap.set("n", "<localleader>lf", function()
 	harpoon.ui:toggle_quick_menu(harpoon:list())
 end)
 vim.keymap.set("n", "<leader>a", function()
@@ -65,8 +70,6 @@ end)
 vim.keymap.set("n", "<C-x>", function()
 	harpoon:list():select(4)
 end)
-
--- Toggle previous & next buffers stored within Harpoon list
 vim.keymap.set("n", "<C-S-P>", function()
 	harpoon:list():prev()
 end)
