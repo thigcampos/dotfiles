@@ -3,3 +3,6 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # OrbStack: command-line tools and integration
 source ~/.orbstack/shell/init.zsh 2>/dev/null || :
+
+# Added by swiftly
+. "/Users/thiago/.swiftly/env.sh"
