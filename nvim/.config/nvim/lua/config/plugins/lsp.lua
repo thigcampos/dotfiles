@@ -2,7 +2,7 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			require("lspconfig").sourcekit.setup({
+			vim.lsp.config("sourcekit", {
 				capabilities = {
 					workspace = {
 						didChangeWatchedFiles = {
