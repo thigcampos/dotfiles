@@ -63,17 +63,6 @@
     pruneTags = true
     all = true
 
-[commit]
-    gpgSign = true 
-[includeIf "gitdir:~/Repositories/nan-systems/"]
-    path = ~/.gitconfig-work
-
-[gpg]
-    program = gpg
-
-[signing]
-    key = 6F7D11D6B76DDC5D
-
 [column]
     ui = auto
 
