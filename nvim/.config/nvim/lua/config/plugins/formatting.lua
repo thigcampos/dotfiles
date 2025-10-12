@@ -6,6 +6,7 @@ return {
 				formatters_by_ft = {
 					lua = { "stylua" },
 					rust = { "rustfmt" },
+					swift = { "swiftlint --fix" },
 					python = { "ruff_fix" },
 				},
 				format_on_save = {
