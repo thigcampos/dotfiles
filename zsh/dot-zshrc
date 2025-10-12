@@ -52,6 +52,7 @@ setopt prompt_subst
 alias ls='ls --color=auto'
 alias ll='ls -la'
 alias l='ls -l'
+alias ivim='NVIM_APPNAME=ivim nvim'
 
 # Bun completions
 [ -s "/Users/thiagocampos/.bun/_bun" ] && source "/Users/thiagocampos/.bun/_bun"
